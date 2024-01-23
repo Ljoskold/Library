@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="bookObject.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="window">
+        <header>
+                <h1>Book Library</h1>
+                <p>Keep all your books at one place!</p>
+                <button id="showDialog">Add new book</button>
+        </header>
+        <div class="container">
+            <dialog id="dialog">
+                <form id="form" method="dialog">
+                    <div class="bookName">
+                        <label for="name">Book name:</label>
+                        <input type="text" name="name" id="name" autocomplete="off">
+                    </div>
+                    <div class="authorName">
+                        <label for="author">Author:</label>
+                        <input type="text" name="author" id="author" autocomplete="off">
+                    </div>
+                    <div class="pages">
+                        <label for="pages">How many pages?</label>
+                        <input type="number" name="pages" id="pages" autocomplete="off" step="">
+                    </div>
+                    <div class="readStatus">
+                        <label for="readStatus">Have you finished it?</label>
+                        <select name="readStatus" id="readStatus">
+                            <option value="finished" selected>Finished</option>
+                            <option value="not finished yet">Not finished yet</option>
+                        </select>
+                    </div>
+                    <div class="dialogBtn">
+                        <button type="submit" id="submitBtn">Add book</button>
+                        <button type="button" id="cancelBtn">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+            <div class="bookShelf" id="bookShelf">
+                <div class="book">
+                    <h1>The Hobbit</h1>
+                    <h2>by J.R.R Talkien</h2>
+                    <h3>Pages: 320</h3>
+                    <select class="bookStatus" name="bookStatus" id="">
+                        <option value="finished">Finished</option>
+                        <option value="not finished yet">Not finished yet</option>
+                    </select>
+                    <button id="demoBtn">Delete book</button>
+                </div>
+            </div>
+        </div>
+        <footer><a href="https://github.com/Ljoskold/Library.git" target="_blank" rel="noopener noreferrer">Ljoskold <img src="images/github-logo-.png" alt=""></a></footer>
+    </div>
+</body>
+</html>
