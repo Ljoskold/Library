@@ -47,13 +47,18 @@ submitBtn.addEventListener('click', (e) => {
     addBookToShelf(book);
 })
 
-function Book(name, author, pages, read) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.id = generateUniqueId(name, author, pages, read); 
-};
+class Book {
+    constructor(name, author, pages, read) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.id = this.generateUniqueId(name, author, pages, read); 
+    };
+    generateUniqueId(name, author, pages) {
+        return `${name}_${author}_${pages}`;
+    }
+}
 
 function generateUniqueId(name, author, pages) {
     return `${name}_${author}_${pages}`;
@@ -71,8 +76,6 @@ function addBookToShelf (book){
     const bookPages = document.createElement("h3");
     const deleteBookBtn = document.createElement("button");
     const statusSelector = document.createElement("select");
-    // const option1 = document.createElement("option");
-    // const option2 = document.createElement("option");
 
     bookN.classList.add("book");
     deleteBookBtn.classList.add("deleteBookBtn");
@@ -137,3 +140,11 @@ function createOptions(statusSelector, book) {
     statusSelector.appendChild(option1);
     statusSelector.appendChild(option2);
 }
+
+// function Book(name, author, pages, read) {
+//     this.name = name;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+//     this.id = generateUniqueId(name, author, pages, read); 
+// };
